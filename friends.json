@@ -28,6 +28,12 @@
         "relationship": "Cousin",
         "detail": "Loves to travel and explore new places.",
         "hobbies": ["Traveling", "Photography", "Food"]
+    },
+     {
+        "name": "Casey",
+        "relationship": "Cousin",
+        "detail": "Loves to travel and explore new places.",
+        "hobbies": ["Traveling", "Photography", "Food"]
     }
     
 ]

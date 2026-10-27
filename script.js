@@ -48,7 +48,7 @@ function loadFriends() {
 
       const friends = JSON.parse(xhr.responseText);
 
-      showFriends(friends);
+      renderFriends(friends);
 
     }
 
@@ -69,7 +69,7 @@ function renderFriends(friends) {
 
   friends.forEach(function (friend) {
 
-      html = `<div class="col-12 col-md-6 col-lg-4">
+      html += `<div class="col-12 col-md-6 col-lg-4">
   <article class="card h-100">
     <div class="card-body">
       <h2 class="card-title h4">${friend.name}</h2>
@@ -83,7 +83,8 @@ function renderFriends(friends) {
   });
   document.getElementById("cards").innerHTML = html;
 
-
+statusMessage.classList.remove("error");
+statusMessage.textContent = `${friends.length} friends loaded.`;
 
 }
 
@@ -97,8 +98,7 @@ function renderFriends(friends) {
 
 
 // Supplied success message. Keep this after the cards are updated.
-statusMessage.classList.remove("error");
-statusMessage.textContent = `${friends.length} friends loaded.`;
+
 
 
 
