@@ -1,2 +1,32 @@
 [
+    {
+        "name": "Maya",
+        "year": "Junior",
+        "club": "Robotics",
+        "classes": [
+            "AP Bio",
+            "Web Design",
+            "Spanish 3"
+        ]
+    },
+    {
+        "name": "Devon",
+        "year": "Senior",
+        "club": "Stage Crew",
+        "classes": [
+            "Calculus",
+            "Wood 1",
+            "English 12"
+        ]
+    },
+    {
+        "name": "Priya",
+        "year": "Sophomore",
+        "club": "Marching Band",
+        "classes": [
+            "Chemistry",
+            "Art 2",
+            "US History"
+        ]
+    }
 ]

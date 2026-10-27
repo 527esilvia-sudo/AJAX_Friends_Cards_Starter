@@ -11,7 +11,7 @@ const statusMessage = document.getElementById("status");
 
 // CHECKPOINT 2: When the Load Friends button is clicked, run loadFriends.
 
-
+loadButton.addEventListener("click", loadFriends);
 // -------------------------------------------------------------
 // loadFriends: request the file, check the response, parse it.
 // -------------------------------------------------------------
@@ -38,6 +38,23 @@ function loadFriends() {
   //     } catch (error) {
   //       showDataError(error);
   //     }
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "friends.json");
+
+  xhr.onload = function () {
+
+    if (xhr.status === 200) {
+
+      const friends = JSON.parse(xhr.responseText);
+
+      showFriends(friends);
+
+    }
+
+  };
+
+  xhr.send();
 
 }
 
@@ -46,28 +63,50 @@ function loadFriends() {
 // renderFriends: turn the array into cards on the page.
 // -------------------------------------------------------------
 function renderFriends(friends) {
-  // CHECKPOINT 3: Build every card in one string, then put the
-  // finished string on the page. One person = one card.
-  // Use this supplied markup inside a template literal. Replace each
-  // [PLACEHOLDER] with an expression that reads the current person.
-  // Hobbies is an array: show it as readable, comma-separated text.
-  /*
-  <div class="col-12 col-md-6 col-lg-4">
-    <article class="card h-100">
-      <div class="card-body">
-        <h2 class="card-title h4">[NAME]</h2>
-        <p class="relationship">[RELATIONSHIP]</p>
-        <p>[DETAIL]</p>
-        <p class="hobbies"><strong>Hobbies:</strong> [HOBBIES]</p>
-      </div>
-    </article>
-  </div>
-  */
 
 
-  // Supplied success message. Keep this after the cards are updated.
-  statusMessage.classList.remove("error");
-  statusMessage.textContent = `${friends.length} friends loaded.`;
+  let html = "";
+
+  friends.forEach(function (friend) {
+
+      html += `<li>
+
+      <strong>${friend.name}</strong>
+
+      (${friend.year}, ${friend.club})
+
+      ${friend.classes.join(", ")}
+
+      </li>`;
+
+  });
+
+
+  friendList.innerHTML = html;
+}
+
+// CHECKPOINT 3: Build every card in one string, then put the
+// finished string on the page. One person = one card.
+// Use this supplied markup inside a template literal. Replace each
+// [PLACEHOLDER] with an expression that reads the current person.
+// Hobbies is an array: show it as readable, comma-separated text.
+/*
+<div class="col-12 col-md-6 col-lg-4">
+  <article class="card h-100">
+    <div class="card-body">
+      <h2 class="card-title h4">[NAME]</h2>
+      <p class="relationship">[RELATIONSHIP]</p>
+      <p>[DETAIL]</p>
+      <p class="hobbies"><strong>Hobbies:</strong> [HOBBIES]</p>
+    </div>
+  </article>
+</div>
+*/
+
+
+// Supplied success message. Keep this after the cards are updated.
+statusMessage.classList.remove("error");
+statusMessage.textContent = `${friends.length} friends loaded.`;
 }
 
 
