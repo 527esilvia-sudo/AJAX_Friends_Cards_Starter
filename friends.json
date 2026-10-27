@@ -1,32 +1,33 @@
 [
+   {
+    "name": "Jordan",
+    "relationship": "Teammate",
+    "detail": "Enjoys building games.",
+    "hobbies": ["Coding", "Soccer", "Music"]
+  },
     {
-        "name": "Maya",
-        "year": "Junior",
-        "club": "Robotics",
-        "classes": [
-            "AP Bio",
-            "Web Design",
-            "Spanish 3"
-        ]
+        "name": "Taylor",
+        "relationship": "Classmate",
+        "detail": "Loves to read and write.",
+        "hobbies": ["Reading", "Writing", "Traveling"]
     },
     {
-        "name": "Devon",
-        "year": "Senior",
-        "club": "Stage Crew",
-        "classes": [
-            "Calculus",
-            "Wood 1",
-            "English 12"
-        ]
+        "name": "Alex",
+        "relationship": "Neighbor",
+        "detail": "Passionate about photography.",
+        "hobbies": ["Photography", "Hiking", "Cooking"]
     },
     {
-        "name": "Priya",
-        "year": "Sophomore",
-        "club": "Marching Band",
-        "classes": [
-            "Chemistry",
-            "Art 2",
-            "US History"
-        ]
+        "name": "Sam",
+        "relationship": "Friend",
+        "detail": "Enjoys playing video games.",
+        "hobbies": ["Gaming", "Streaming", "Board Games"]
+    },
+    {
+        "name": "Casey",
+        "relationship": "Cousin",
+        "detail": "Loves to travel and explore new places.",
+        "hobbies": ["Traveling", "Photography", "Food"]
     }
+    
 ]

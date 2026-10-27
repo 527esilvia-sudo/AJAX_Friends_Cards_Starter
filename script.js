@@ -107,7 +107,7 @@ function renderFriends(friends) {
 // Supplied success message. Keep this after the cards are updated.
 statusMessage.classList.remove("error");
 statusMessage.textContent = `${friends.length} friends loaded.`;
-}
+
 
 
 // =============================================================
